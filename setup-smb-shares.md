@@ -30,10 +30,10 @@ The steps are outlined below:
 - in the menu on the left side of the main TrueNAS home screen click on `SHARING` >> then click on `Windows Shares (SMB)` >> then click on `ADD` >>
 - in the popup window there will be a folder with a little arrow next to it with the source pool name listed, click the arrow which will show the next directory level down, keep clicking the little down arrows until the share that you want to make available is displayed >>
 - there should be a little blue `ACL` icon next to the share that you just created >> make sure to click on the name of the share. This is important and easy to forget >>
-- below the share is a section for name, provide a name >> add a description (optional) >> in the `Purpose` section leave it set to `Default sharea parameters` >>
+- below the share is a section for name, provide a name >> add a description (optional) >> in the `Purpose` section leave it set to `Default share parameters` >>
 - at the bottom of the page click `SUBMIT`
 
 ### TEST TO CONFIRM THE SHARE IS ACCESSIBLE
-- 
+- In the windows client that the share is being shared with, open file explorer >> then in the search bar area of file explorer type: `\\IP.ADD.RE.SS of the TrueNAS machine that is hosting the share (do not use the mgmt IP address) and press `enter` >> in the popup window enter the login credentials >> the share should be immediately available and be displayed as a standard looking windows folder with the same name that you assigned to the share in the TrueNAS host
 
  
