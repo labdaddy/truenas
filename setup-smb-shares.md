@@ -1,4 +1,5 @@
 ### SETUP SMB SHARES in TRUENAS 13
+NOTE: all credit where it is due. This tutorial was made from watching a TrueNAS SMB setup video made by the amazing Tom Lawrence. [Video link here](https://www.youtube.com/watch?v=R-5jbDTCsOE)
 ASSUMPTIONS
 This tutorial assumes a user and group already exist.
 The steps are outlined below:
