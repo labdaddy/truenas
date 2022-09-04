@@ -1,7 +1,7 @@
 ### SETUP AUTOMATIC SHUTDOWN WHEN SYSTEM DETECTS ITS ON BATTERY POWER FROM UPS
 All this information was found at the following website, all credit to the original author for [this amazing tutorial !](https://www.wundertech.net/how-to-set-up-truenas-as-a-nut-server/)
 
-### How to Set Up TrueNAS as a NUT Server
+#### How to Set Up TrueNAS as a NUT Server
 Post author:WunderTech
 
 Post last modified:May 13, 2022
@@ -24,10 +24,9 @@ Table of Contents  show
 1. How to Set Up TrueNAS as a NUT Server Master
 This will show how to set up TrueNAS as a NUT server master. If you want to set it up as a slave (client), scroll down to step two.
 
-Before we configure TrueNAS to be our NUT server, we need to confirm that we have a connection with the UPS device through the USB port.
+#### Before we configure TrueNAS to be our NUT server, we need to confirm that we have a connection with the UPS device through the USB port.
 
 1. Select System Settings then Shell.
-
 
 2. Run the command below to validate that TrueNAS can see and communicate with the UPS. You should see your UPS device as well as all of the information for it.
 
@@ -38,8 +37,6 @@ nut-scanner -U
 3. Select System Settings then Services.
 
 4. Scroll down to UPS. Start the service, then enable it to start automatically. After you enable both, click the pencil icon all the way to the right to edit the UPS service.
-
-
 
 5. Modify the General Options and change them to match the settings below.
 
