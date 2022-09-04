@@ -25,19 +25,19 @@ Before we configure TrueNAS to be our NUT server, we need to confirm that we hav
 
 1. Select System Settings then Shell.
 
-image 46
+
 2. Run the command below to validate that TrueNAS can see and communicate with the UPS. You should see your UPS device as well as all of the information for it.
 
 Keep note of the driver as we will need it in a future step.
 
 nut-scanner -U
-image 47
+
 3. Select System Settings then Services.
 
-image 48
 4. Scroll down to UPS. Start the service, then enable it to start automatically. After you enable both, click the pencil icon all the way to the right to edit the UPS service.
 
-image 51
+
+
 5. Modify the General Options and change them to match the settings below.
 
 Identifier: ups
@@ -47,28 +47,29 @@ Monitor Password: [SET_YOUR_PASSWORD]
 Driver: Select the device that you have, but make sure that the driver matches what you found in step two above (usbhid-ups in my case). The actual name doesn’t matter, but the driver must match.
 Port or Hostname: auto
 Enable Remote Monitor
-image 52
+
 6. In the Shutdown section, modify the settings (examples below).
 
 Shutdown Mode: UPS goes on battery or UPS reaches low battery – select the option that you’d like depending on if you want TrueNAS to shut down immediately (UPS goes on battery) or when the UPS reaches a low battery (UPS reaches low battery).
 Shutdown Timer: 30 – this can be modified to a higher value if you’d like. This will shutdown TrueNAS 30 seconds after the UPS goes on battery or reaches low battery (whatever you select in the Shutdown Mode).
 Shutdown Command: /sbin/shutdown -h
 Power Off UPS: This can be enabled to power off the UPS when TrueNAS shuts down.
-image 57
+
 7. The Other Options section isn’t mandatory, but if you’d like to configure anything or add any additional parameters to the ups.conf or upsd.conf file, you can do that here.
 
 When you’re done modifying the settings, Save the configuration.
 
-image 54
+
 8. At this point, TrueNAS should be connected with your UPS! If you’d like to test the connection, access the shell by selecting System Settings then Shell.
 
 Run the command below to see if you can connect to the UPS! You should return the battery level and various other things for the UPS.
 
 upsc ups@localhost
-image 55
+
 9. In the event that your UPS does go on battery power, you’ll get an alert in TrueNAS and the operating system will shut down based on the settings configured above.
 
 how to set up truenas as a nut server
+
 2. How to Set Up TrueNAS as a NUT Server Slave/Client
 This will show how to set up TrueNAS as a NUT server slave (client). If you want to set it up as a master, scroll up to step one.
 
@@ -80,10 +81,10 @@ I’ll be connecting to a NUT Server hosted on a Synology NAS in this section.
 
 1. Select System Settings then Services.
 
-image 48
+
 2. Scroll down to UPS. Start the service, then enable it to start automatically. After you enable both, click the pencil icon all the way to the right to edit the UPS service.
 
-image 51
+
 3. Modify the General Options and change them to match the settings below.
 
 Identifier: ups
@@ -99,16 +100,16 @@ Enable Remote Monitor
 Shutdown Mode: UPS goes on battery or UPS reaches low battery – select the option that you’d like depending on if you want TrueNAS to shut down immediately (UPS goes on battery) or when the UPS reaches a low battery (UPS reaches low battery).
 Shutdown Timer: 30 – this can be modified to a higher value if you’d like. This will shutdown TrueNAS 30 seconds after the UPS goes on battery or reaches low battery (whatever you select in the Shutdown Mode).
 Shutdown Command: /sbin/shutdown -h
-image 57
+
 7. The Other Options section isn’t mandatory, but if you’d like to configure anything or add any additional parameters to the ups.conf or upsd.conf file, you can do that here.
 
 When you’re done modifying the settings, Save the configuration.
 
-image 54
+
 8. TrueNAS will now monitor the UPS at the remote location. To confirm that you have a connection, run the command below by accessing the Shell (System Settings > Shell).
 
 upsc ups@[NUT_SERVER_IP]
-image 58
+
 3. Testing – How to Set Up TrueNAS as a NUT Server
 The process above is how to set up TrueNAS as a NUT server master or slave. Please keep in mind that you won’t be certain that any of this will work until you actually lose power or pull the plug on your UPS to test it.
 
