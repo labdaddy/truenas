@@ -1,11 +1,14 @@
 ### SETUP AUTOMATIC SHUTDOWN WHEN SYSTEM DETECTS ITS ON BATTERY POWER FROM UPS
 All this information was found at the following website, all credit to the original author for [this amazing tutorial !](https://www.wundertech.net/how-to-set-up-truenas-as-a-nut-server/)
 
-How to Set Up TrueNAS as a NUT Server
+### How to Set Up TrueNAS as a NUT Server
 Post author:WunderTech
+
 Post last modified:May 13, 2022
+
 Post category:TrueNAS
-In this tutorial, we will look at how to set up TrueNAS as a NUT server.
+
+#### In this tutorial, we will look at how to set up TrueNAS as a NUT server.
 
 If you’re running TrueNAS, it’s very important to use a UPS device to automatically shut down your NAS server if it experiences power loss. This is generally because NAS devices utilize RAID, which means that a small part of each file is stored on each connected hard drive.
 
